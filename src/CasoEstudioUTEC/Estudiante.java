@@ -1,4 +1,4 @@
 package CasoEstudioUTEC;
 
-public class Usuario {
+public class Estudiante {
 }
