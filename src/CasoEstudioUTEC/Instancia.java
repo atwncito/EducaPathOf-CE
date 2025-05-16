@@ -3,7 +3,7 @@ package CasoEstudioUTEC;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-// Enumeraciones para tipo y solicitante
+// Enumeraciones para tipo y solicitante.
 enum TipoInstancia {
     REUNION, LLAMADA, PEDIDO_INFORME, COORDINACION, EVENTO_INFORMAL
 }
@@ -24,12 +24,12 @@ public class Instancia {
     private boolean realizada;
     private String googleCalendarId;
 
-    // Campos para eventos informales
+    // Campos para eventos informales.
     private String lugar;
     private String otrasPersonas;
     private String registradoPor;
 
-    // Constructor
+    // Constructor principal de la clase.
     public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante) {
         this.id = generarId();
         this.titulo = titulo;
