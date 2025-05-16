@@ -21,7 +21,7 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 | Nombre completo | Usuario GitHub | Aporte principal |
 |-----------------|----------------|------------------|
 | Maria Ordeix    | @ana.gomez     |                  |
-| Juan Yarza      | @juanyarza     |                  |
+| Juan Yarza      | @juanchoyarza  |                  |
 | Rodrigo Antúnez | @atwncito      |                  |
 | Eduardo Luz     |                |                  |
 | Carlos Araujo   |                |                  |
