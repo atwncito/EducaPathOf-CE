@@ -1,4 +1,4 @@
 package CasoEstudioUTEC;
 
-public class Auditoria {
+public class Perfil {
 }
