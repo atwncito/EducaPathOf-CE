@@ -3,7 +3,6 @@ package CasoEstudioUTEC;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-// Enumeraciones para tipo y solicitante.
 enum TipoInstancia {
     REUNION, LLAMADA, PEDIDO_INFORME, COORDINACION, EVENTO_INFORMAL
 }
@@ -24,12 +23,10 @@ public class Instancia {
     private boolean realizada;
     private String googleCalendarId;
 
-    // Campos para eventos informales.
     private String lugar;
     private String otrasPersonas;
     private String registradoPor;
 
-    // Constructor principal de la clase.
     public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante) {
         this.id = generarId();
         this.titulo = titulo;
@@ -72,6 +69,104 @@ public class Instancia {
         System.out.println("Instancia registrada. ID: " + this.id);
     }
 
-    // Getters y setters pueden agregarse si es necesario
-}
+    // Getters y Setters
+    public String getId() {
+        return id;
+    }
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
+
+    public String getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(String estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public String getComentariosConfidenciales() {
+        return comentariosConfidenciales;
+    }
+
+    public void setComentariosConfidenciales(String comentariosConfidenciales) {
+        this.comentariosConfidenciales = comentariosConfidenciales;
+    }
+
+    public TipoInstancia getTipoInstancia() {
+        return tipoInstancia;
+    }
+
+    public void setTipoInstancia(TipoInstancia tipoInstancia) {
+        this.tipoInstancia = tipoInstancia;
+    }
+
+    public Solicitante getSolicitante() {
+        return solicitante;
+    }
+
+    public void setSolicitante(Solicitante solicitante) {
+        this.solicitante = solicitante;
+    }
+
+    public boolean isRealizada() {
+        return realizada;
+    }
+
+    public void setRealizada(boolean realizada) {
+        this.realizada = realizada;
+    }
+
+    public String getGoogleCalendarId() {
+        return googleCalendarId;
+    }
+
+    public void setGoogleCalendarId(String googleCalendarId) {
+        this.googleCalendarId = googleCalendarId;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getOtrasPersonas() {
+        return otrasPersonas;
+    }
+
+    public void setOtrasPersonas(String otrasPersonas) {
+        this.otrasPersonas = otrasPersonas;
+    }
+
+    public String getRegistradoPor() {
+        return registradoPor;
+    }
+
+    public void setRegistradoPor(String registradoPor) {
+        this.registradoPor = registradoPor;
+    }
+}
