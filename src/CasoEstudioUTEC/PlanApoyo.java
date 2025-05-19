@@ -1,11 +1,8 @@
 package CasoEstudioUTEC;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-public class PlanApoyo {
-}
-import java.util.*;
 
 public class PlanApoyo {
     private String id;
@@ -35,7 +32,6 @@ public class PlanApoyo {
         recursos.add(recurso); // Puede ser una URL o nombre de archivo
     }
 
-    // Métodos comunes
     public void agregarObjetivo(String objetivo) {
         objetivos.add(objetivo);
     }
@@ -62,5 +58,60 @@ public class PlanApoyo {
         }
     }
 
-    // Getters y setters...
+    // Getters y Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEstudianteId() {
+        return estudianteId;
+    }
+
+    public void setEstudianteId(String estudianteId) {
+        this.estudianteId = estudianteId;
+    }
+
+    public List<String> getObjetivos() {
+        return objetivos;
+    }
+
+    public void setObjetivos(List<String> objetivos) {
+        this.objetivos = objetivos;
+    }
+
+    public List<String> getActividades() {
+        return actividades;
+    }
+
+    public void setActividades(List<String> actividades) {
+        this.actividades = actividades;
+    }
+
+    public List<Tarea> getCronograma() {
+        return cronograma;
+    }
+
+    public void setCronograma(List<Tarea> cronograma) {
+        this.cronograma = cronograma;
+    }
+
+    public List<VersionPlan> getVersiones() {
+        return versiones;
+    }
+
+    public void setVersiones(List<VersionPlan> versiones) {
+        this.versiones = versiones;
+    }
+
+    public List<String> getRecursos() {
+        return recursos;
+    }
+
+    public void setRecursos(List<String> recursos) {
+        this.recursos = recursos;
+    }
 }
