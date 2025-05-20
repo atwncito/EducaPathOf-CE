@@ -17,6 +17,7 @@ public class Auditor extends Usuario {
         this.areaAsignada = areaAsignada;
     }
 
+    // Metodo toString.
     @Override
     public String toString() {
         return "Auditor{" +
