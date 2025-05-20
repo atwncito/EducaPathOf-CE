@@ -12,22 +12,19 @@ public class Usuario {
         this.contrasenia = contrasenia;
     }
 
-    // Metodo get para nombre del usuario.
+    // Metodos Getters y setters.
     public String getNombre() {
         return nombre;
     }
 
-    // Metodo set para nombre del usuario.
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    // Metodo get para Email del usuario.
     public String getEmail() {
         return email;
     }
 
-    // Metodo set para Email del usuario.
     public void setEmail(String email) {
         this.email = email;
     }

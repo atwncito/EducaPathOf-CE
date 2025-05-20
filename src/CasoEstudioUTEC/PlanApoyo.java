@@ -7,7 +7,6 @@ import java.util.List;
 /**
  * Clase que representa un Plan de Apoyo asociado a un estudiante.
  * Este plan incluye objetivos, actividades, cronograma de tareas, recursos, y versiones con comentarios.
- * Relacionado a RF9 y RF10 del sistema.
  */
 public class PlanApoyo {
 

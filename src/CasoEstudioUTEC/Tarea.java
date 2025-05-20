@@ -14,9 +14,7 @@ public class Tarea {
      */
     private String descripcion;
 
-    /**
-     * Fecha límite para completar la tarea.
-     */
+    // Fecha límite para completar la tarea.
     private Date fechaLimite;
 
     // CONSTRUCTOR

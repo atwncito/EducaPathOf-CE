@@ -10,19 +10,13 @@ import java.util.Date;
 public class VersionPlan {
 
     // ATRIBUTOS PRIVADOS
-    /**
-     * Comentario u observación realizada por el especialista sobre el plan.
-     */
+    // Comentario u observación realizada por el especialista sobre el plan.
     private String comentario;
 
-    /**
-     * Nombre o identificador del especialista que hizo el comentario.
-     */
+    // Nombre o identificador del especialista que hizo el comentario.
     private String especialista;
 
-    /**
-     * Fecha en la que se hizo el comentario (versión del plan).
-     */
+    // Fecha en la que se hizo el comentario (versión del plan).
     private Date fecha;
 
     // CONSTRUCTOR

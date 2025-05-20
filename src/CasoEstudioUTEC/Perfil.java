@@ -60,9 +60,7 @@ public class Perfil {
         this.activo = activo;
     }
 
-    /**
-     * Muestra la información del perfil por consola en un formato legible.
-     */
+    // Muestra la información del perfil por consola en un formato legible.
     public void mostrarPerfil() {
         System.out.println("Nombre: " + nombre);
         System.out.println("Correo: " + correoElectronico);

@@ -14,9 +14,7 @@ enum TipoRecordatorio {
     OTRO
 }
 
-/**
- * Define la frecuencia con la que se repite un recordatorio.
- */
+//Define la frecuencia con la que se repite un recordatorio.
 enum Frecuencia {
     UNICO,
     DIARIO,
@@ -75,9 +73,7 @@ public class Recordatorio {
         this.creadoPor = creadoPor;
     }
 
-    /**
-     * Genera un identificador único para el recordatorio (UUID).
-     */
+    // Genera un identificador único para el recordatorio (UUID).
     private String generarId() {
         return UUID.randomUUID().toString();
     }
