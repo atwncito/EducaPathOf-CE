@@ -28,8 +28,9 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 
 > Se puede verificar la participación individual a través del
 historial de commits en este repositorio exclusivamente, el proyecto
-estará alojado también en GitLab pero será alojado unicamente por
-una persona por lo que no se mantendrá un historial de commits detallado.
+será alojado también en GitLab pero unicamente por
+una persona, por lo que no se mantendrá un historial de commits
+detallado en ese repositorio.
 ---
 ## Requisitos técnicos 
 - Proyecto desarrollado en Java (versión 24). 
