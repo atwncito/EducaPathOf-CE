@@ -27,7 +27,7 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 | Carlos Araujo   | -------------- | @carlos.araujo   |                  |
 
 > Se puede verificar la participación individual a través del
-historial de commits en este repositorio exclusivamente, el proyecto
+historial de commits en este repositorio exclusivamente. El proyecto
 será alojado también en GitLab pero unicamente por
 una persona, por lo que no se mantendrá un historial de commits
 detallado en ese repositorio.
