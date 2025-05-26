@@ -18,16 +18,18 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 ---
 ## 💻 Participantes
 
-| Nombre completo | Usuario GitHub | Aporte principal |
-|-----------------|----------------|------------------|
-| Maria Ordeix    | @ana.gomez     |                  |
-| Juan Yarza      | @juanchoyarza  |                  |
-| Rodrigo Antúnez | @atwncito      |                  |
-| Eduardo Luz     |                |                  |
-| Carlos Araujo   |                |                  |
+| Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal |
+|-----------------|----------------|------------------|------------------|
+| Maria Ordeix    | @ana.gomez     | @ines.ordeix     |                  |
+| Juan Yarza      | @juanchoyarza  | @juan.yarza      |                  |
+| Rodrigo Antúnez | @atwncito      | @rodrigo.antunez |                  |
+| Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     |                  |
+| Carlos Araujo   | -------------- | @carlos.araujo   |                  |
 
 > Se puede verificar la participación individual a través del
-historial de commits en este repositorio. 
+historial de commits en este repositorio exclusivamente, el proyecto
+estará alojado también en GitLab pero será alojado unicamente por
+una persona por lo que no se mantendrá un historial de commits detallado.
 ---
 ## Requisitos técnicos 
 - Proyecto desarrollado en Java (versión 24). 
