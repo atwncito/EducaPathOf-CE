@@ -5,10 +5,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class GestorDeRecordatorios {
-    // Lista para almacenar todos los recordatorios
-    private List<Recordatorio> recordatorios;
+    private List<Recordatorio> recordatorios;            // Lista para almacenar todos los recordatorios
 
-    // Constructor: inicializa la lista de recordatorios
+    // CONSTRUCTOR
     public GestorDeRecordatorios() {
         this.recordatorios = new ArrayList<>();
     }
@@ -77,5 +76,16 @@ public class GestorDeRecordatorios {
     // Devuelve una copia de la lista de recordatorios para evitar modificaciones externas
     public List<Recordatorio> getRecordatorios() {
         return new ArrayList<>(recordatorios);
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("GestorDeRecordatorios: ").append(recordatorios.size()).append(" recordatorios\n");
+        for (Recordatorio r : recordatorios) {
+            sb.append(r.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }

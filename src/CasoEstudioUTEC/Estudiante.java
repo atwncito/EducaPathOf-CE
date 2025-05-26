@@ -21,7 +21,7 @@ public class Estudiante extends Usuario {
     private LinkedList<String> documentacionAdjunta;
     private String observacionesConfidenciales;
 
-    // Constructor principal de la clase.
+    // CONSTRUCTOR
     public Estudiante(String nombre, String email, String contrasenia, String carrera, String grupo, String apellido,
                       int numeroCI, Date fechaNacimiento, String direccion, int telefono, int edad, String foto,
                       String sistemaSalud, String motivoDerivacion, String estadoSalud, String comentarios,
@@ -45,7 +45,7 @@ public class Estudiante extends Usuario {
         this.observacionesConfidenciales = observacionesConfidenciales;
     }
 
-    // Metodos Geters y Setters.
+    // METODOS GET Y SET
     public String getCarrera() {
         return carrera;
     }
@@ -131,10 +131,10 @@ public class Estudiante extends Usuario {
         this.documentacionAdjunta = documentacionAdjunta;
     }
 
-    // Metodo toString.
+    // METODO toString
     @Override
     public String toString() {
-        return "Estudiante{" +
+        return "Estudiante {" +
                 "nombre='" + getNombre() + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", email='" + getEmail() + '\'' +

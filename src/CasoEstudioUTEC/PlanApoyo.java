@@ -4,14 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Clase que representa un Plan de Apoyo asociado a un estudiante.
- * Este plan incluye objetivos, actividades, cronograma de tareas, recursos, y versiones con comentarios.
- */
 public class PlanApoyo {
 
     // ATRIBUTOS PRIVADOS
-    private String id;                     // Identificador único del plan de apoyo
+    private String id;                    // Identificador único del plan de apoyo
     private String estudianteId;          // Identificador del estudiante al que pertenece este plan
     private List<String> objetivos;       // Lista de objetivos definidos en el plan
     private List<String> actividades;     // Actividades propuestas en el plan
@@ -106,7 +102,7 @@ public class PlanApoyo {
         }
     }
 
-    // MÉTODOS GETTERS Y SETTERS
+    // METODOS GET Y SET
     public String getId() {
         return id;
     }
@@ -161,5 +157,44 @@ public class PlanApoyo {
 
     public void setRecursos(List<String> recursos) {
         this.recursos = recursos;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("PlanApoyo {\n");
+        sb.append("  ID: ").append(id).append("\n");
+        sb.append("  Estudiante ID: ").append(estudianteId).append("\n");
+
+        sb.append("  Objetivos:\n");
+        for (String obj : objetivos) {
+            sb.append("    - ").append(obj).append("\n");
+        }
+
+        sb.append("  Actividades:\n");
+        for (String act : actividades) {
+            sb.append("    - ").append(act).append("\n");
+        }
+
+        sb.append("  Cronograma:\n");
+        for (Tarea t : cronograma) {
+            sb.append("    - ").append(t.getDescripcion()).append(" (fecha límite: ").append(t.getFechaLimite()).append(")\n");
+        }
+
+        sb.append("  Recursos:\n");
+        for (String recurso : recursos) {
+            sb.append("    - ").append(recurso).append("\n");
+        }
+
+        sb.append("  Versiones:\n");
+        for (VersionPlan v : versiones) {
+            sb.append("    - [").append(v.getFecha()).append("] ")
+                    .append(v.getEspecialista()).append(": ")
+                    .append(v.getComentario()).append("\n");
+        }
+
+        sb.append("}");
+        return sb.toString();
     }
 }

@@ -5,14 +5,14 @@ public class Usuario {
     private String email;
     private String contrasenia;
 
-    // Constructor principal de la clase.
+    // CONSTRUCTOR
     public Usuario(String nombre, String email, String contrasenia) {
         this.nombre = nombre;
         this.email = email;
         this.contrasenia = contrasenia;
     }
 
-    // Metodos Getters y setters.
+    // METODOS GET Y SET
     public String getNombre() {
         return nombre;
     }
@@ -29,19 +29,22 @@ public class Usuario {
         this.email = email;
     }
 
-    // Metodo para validar el Email del usuario.
+    // METODO PARA VALIDAR EMAIL DEL USUARIO
     public boolean validarEmail(String email) {
         return email != null && email.matches("^[A-Za-z0-9+_.-]+@estudiantes\\.utec\\.edu\\.uy$");
     }
 
-    // Metodo para cambiar contraseña del usuario.
+    // METODO PARA CAMBIAR CONTRASEÑA DEL USUARIO
     public void cambiarContrasenia(String nuevaContrasenia) {
         this.contrasenia = nuevaContrasenia;
     }
 
-    // Metodo toString
+    // METODO toString
     @Override
     public String toString() {
-        return "Usuario: " + nombre;
+        return "Usuario {" +
+                "nombre=" + getNombre() +
+                ", email='" + getEmail() + '\'' +
+                '}';
     }
 }

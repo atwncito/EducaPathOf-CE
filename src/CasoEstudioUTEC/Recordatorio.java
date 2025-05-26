@@ -22,15 +22,8 @@ enum Frecuencia {
     MENSUAL
 }
 
-// CLASE PRINCIPAL: Recordatorio
-/**
- * Representa un recordatorio asociado a una instancia (reunión, llamada, etc.)
- * Incluye control de estado (enviado, vencido), tipo y frecuencia.
- */
 public class Recordatorio {
-
-    // ATRIBUTOS PRIVADOS
-    private String id;                        // Identificador único del recordatorio
+    private String id;                       // Identificador único del recordatorio
     private String titulo;                   // Título del recordatorio
     private LocalDateTime fechaHora;         // Fecha y hora en que debe activarse el recordatorio
     private Instancia instanciaAsociada;     // Instancia del sistema a la que está relacionado el recordatorio
@@ -73,14 +66,14 @@ public class Recordatorio {
         this.creadoPor = creadoPor;
     }
 
-    // Genera un identificador único para el recordatorio (UUID).
+    // Genera un identificador único para el recordatorio (UUID)
     private String generarId() {
         return UUID.randomUUID().toString();
     }
 
     // MÉTODOS FUNCIONALES
     /**
-     * Marca el recordatorio como enviado y muestra un mensaje en consola simulando una notificación.
+     * Marca el recordatorio como enviado y muestra un mensaje en consola simulando una notificación
      */
     public void enviarNotificacion() {
         this.enviado = true;
@@ -129,7 +122,7 @@ public class Recordatorio {
         this.fechaHora = nuevaFechaHora;
     }
 
-    // GETTERS Y SETTERS
+    // METODOS GET Y SET
     public String getId() {
         return id;
     }
@@ -206,5 +199,23 @@ public class Recordatorio {
 
     public void setGoogleCalendarId(String googleCalendarId) {
         this.googleCalendarId = googleCalendarId;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        return "Recordatorio {" +
+                "\n  ID: " + id +
+                "\n  Título: " + titulo +
+                "\n  Fecha y hora: " + fechaHora +
+                "\n  Tipo: " + (tipo != null ? tipo.name() : "N/A") +
+                "\n  Frecuencia: " + (frecuencia != null ? frecuencia.name() : "N/A") +
+                "\n  Enviado: " + (enviado ? "Sí" : "No") +
+                "\n  Estado: " + getEstadoColor() +
+                "\n  Mensaje: " + (mensaje != null ? mensaje : "Ninguno") +
+                "\n  Creado por: " + (creadoPor != null ? creadoPor : "Desconocido") +
+                "\n  Google Calendar ID: " + (googleCalendarId != null ? googleCalendarId : "No asignado") +
+                "\n  Instancia Asociada: " + (instanciaAsociada != null ? instanciaAsociada.getId() : "N/A") +
+                "\n}";
     }
 }

@@ -13,9 +13,8 @@ enum Solicitante {
     ESTUDIANTE, DIRECCION_EDUCACION
 }
 
-// Clase que representa una instancia de contacto o actividad dentro del sistema (como una reunión o llamada).
 public class Instancia {
-    // Atributos privados de la clase
+    // ATRIBUTOS PRIVADOS
     private String id;                          // Identificador único de la instancia (UUID)
     private String titulo;                      // Título descriptivo de la instancia
     private LocalDateTime fechaHora;            // Fecha y hora en la que se realiza la instancia
@@ -45,7 +44,7 @@ public class Instancia {
 
     // Genera un ID único para la instancia utilizando UUID.
     private String generarId() {
-        return UUID.randomUUID().toString(); // RF12
+        return UUID.randomUUID().toString();
     }
 
     // Registra la instancia, asignando los comentarios y marcándola como realizada.
@@ -81,7 +80,7 @@ public class Instancia {
         System.out.println("Instancia registrada. ID: " + this.id);
     }
 
-    // MÉTODOS GETTERS Y SETTERS
+    // METODOS GET Y SET
     public String getId() {
         return id;
     }
@@ -180,5 +179,30 @@ public class Instancia {
 
     public void setRegistradoPor(String registradoPor) {
         this.registradoPor = registradoPor;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Instancia {\n");
+        sb.append("  ID: ").append(id).append("\n");
+        sb.append("  Título: ").append(titulo).append("\n");
+        sb.append("  Fecha y hora: ").append(fechaHora).append("\n");
+        sb.append("  Estudiante: ").append(estudiante).append("\n");
+        sb.append("  Tipo: ").append(tipoInstancia != null ? tipoInstancia.name() : "N/A").append("\n");
+        sb.append("  Solicitante: ").append(solicitante != null ? solicitante.name() : "N/A").append("\n");
+        sb.append("  Realizada: ").append(realizada ? "Sí" : "No").append("\n");
+        sb.append("  Comentarios: ").append(comentarios != null ? comentarios : "Ninguno").append("\n");
+
+        if (tipoInstancia == TipoInstancia.EVENTO_INFORMAL) {
+            sb.append("  Lugar: ").append(lugar != null ? lugar : "No especificado").append("\n");
+            sb.append("  Otras personas: ").append(otrasPersonas != null ? otrasPersonas : "Ninguna").append("\n");
+            sb.append("  Registrado por: ").append(registradoPor != null ? registradoPor : "Desconocido").append("\n");
+        }
+
+        sb.append("  Google Calendar ID: ").append(googleCalendarId != null ? googleCalendarId : "No asignado").append("\n");
+        sb.append("}");
+        return sb.toString();
     }
 }

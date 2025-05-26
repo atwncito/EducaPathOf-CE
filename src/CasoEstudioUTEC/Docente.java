@@ -3,13 +3,13 @@ package CasoEstudioUTEC;
 public class Docente extends Usuario {
     private String areaEncargada;
 
-    // Constructor principal de la clase.
+    // CONSTRUCTOR
     public Docente(String nombre, String email, String contrasenia, String areaEncargada) {
         super(nombre, email, contrasenia);
         this.areaEncargada = areaEncargada;
     }
 
-    // Metodo Get y Set.
+    // METODO GET Y SET
     public String getAreaEncargada() {
         return areaEncargada;
     }
@@ -17,10 +17,10 @@ public class Docente extends Usuario {
         this.areaEncargada = areaEncargada;
     }
 
-    // Metodo toString.
+    // METODO toString
     @Override
     public String toString() {
-        return "Docente{" +
+        return "Docente {" +
                 "nombre='" + getNombre() + '\'' +
                 ", email='" + getEmail() + '\'' +
                 ", areaEncargada='" + areaEncargada + '\'' +

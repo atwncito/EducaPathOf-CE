@@ -2,22 +2,12 @@ package CasoEstudioUTEC;
 
 import java.util.Date;
 
-/**
- * Clase que representa una versión de un plan de apoyo.
- * Cada versión contiene un comentario realizado por un especialista
- * y la fecha en la que se registró dicha observación.
- */
 public class VersionPlan {
 
     // ATRIBUTOS PRIVADOS
-    // Comentario u observación realizada por el especialista sobre el plan.
-    private String comentario;
-
-    // Nombre o identificador del especialista que hizo el comentario.
-    private String especialista;
-
-    // Fecha en la que se hizo el comentario (versión del plan).
-    private Date fecha;
+    private String comentario;            // Comentario u observación realizada por el especialista sobre el plan
+    private String especialista;          // Nombre o identificador del especialista que hizo el comentario
+    private Date fecha;                   // Fecha en la que se hizo el comentario (versión del plan)
 
     // CONSTRUCTOR
     /**
@@ -33,7 +23,7 @@ public class VersionPlan {
         this.fecha = fecha;
     }
 
-    // MÉTODOS GETTER Y SETTER
+    // METODOS GET Y SET
     /**
      * Obtiene el comentario de esta versión del plan.
      *
@@ -86,5 +76,15 @@ public class VersionPlan {
      */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        return "Versión del Plan {" +
+                "Comentario: '" + comentario + '\'' +
+                ", Especialista: '" + especialista + '\'' +
+                ", Fecha: " + fecha +
+                '}';
     }
 }

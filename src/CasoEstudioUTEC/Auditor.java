@@ -3,13 +3,13 @@ package CasoEstudioUTEC;
 public class Auditor extends Usuario {
     private String areaAsignada;
 
-    // Constructor principal de la clase.
+    // CONSTRUCTOR
     public Auditor(String nombre, String email, String contrasenia, String areaAsignada) {
         super(nombre, email, contrasenia);
         this.areaAsignada = areaAsignada;
     }
 
-    // Metodo Get y Set.
+    // METODO GET Y SET
     public String getAreaAsignada() {
         return areaAsignada;
     }
@@ -17,10 +17,10 @@ public class Auditor extends Usuario {
         this.areaAsignada = areaAsignada;
     }
 
-    // Metodo toString.
+    // METODO toString
     @Override
     public String toString() {
-        return "Auditor{" +
+        return "Auditor {" +
                 "nombre='" + getNombre() + '\'' +
                 ", email='" + getEmail() + '\'' +
                 ", areaAsignada='" + areaAsignada + '\'' +

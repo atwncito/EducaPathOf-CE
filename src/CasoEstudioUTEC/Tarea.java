@@ -9,13 +9,8 @@ import java.util.Date;
 public class Tarea {
 
     // ATRIBUTOS PRIVADOS
-    /**
-     * Descripción breve de la tarea (por ejemplo: "Enviar informe", "Revisar documentos").
-     */
-    private String descripcion;
-
-    // Fecha límite para completar la tarea.
-    private Date fechaLimite;
+    private String descripcion;       // Descripción breve de la tarea (por ejemplo: "Enviar informe", "Revisar documentos").
+    private Date fechaLimite;         // Fecha límite para completar la tarea.
 
     // CONSTRUCTOR
     /**
@@ -29,7 +24,7 @@ public class Tarea {
         this.fechaLimite = fechaLimite;
     }
 
-    // MÉTODOS GETTER Y SETTER
+    // MÉTODOS GET Y SET
     /**
      * Obtiene la descripción de la tarea.
      *
@@ -64,5 +59,14 @@ public class Tarea {
      */
     public void setFechaLimite(Date fechaLimite) {
         this.fechaLimite = fechaLimite;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        return "Tarea {" +
+                "Descripción: '" + descripcion + '\'' +
+                ", Fecha límite: " + fechaLimite +
+                '}';
     }
 }

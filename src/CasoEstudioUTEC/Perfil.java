@@ -1,9 +1,5 @@
 package CasoEstudioUTEC;
 
-/**
- * Clase que representa el perfil de un usuario dentro del sistema.
- * Un perfil contiene información básica como nombre, correo, rol y si está activo o no.
- */
 public class Perfil {
 
     // ATRIBUTOS PRIVADOS
@@ -27,7 +23,7 @@ public class Perfil {
         this.activo = activo;
     }
 
-    // MÉTODOS GETTERS Y SETTERS
+    // MÉTODOS GET Y SET
     public String getNombre() {
         return nombre;
     }
@@ -60,11 +56,14 @@ public class Perfil {
         this.activo = activo;
     }
 
-    // Muestra la información del perfil por consola en un formato legible.
-    public void mostrarPerfil() {
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Correo: " + correoElectronico);
-        System.out.println("Rol: " + rol);
-        System.out.println("Activo: " + (activo ? "Sí" : "No"));
+    // METODO toString
+    @Override
+    public String toString() {
+        return "Perfil {\n" +
+                "  Nombre: " + nombre + "\n" +
+                "  Correo electrónico: " + correoElectronico + "\n" +
+                "  Rol: " + rol + "\n" +
+                "  Activo: " + (activo ? "Sí" : "No") + "\n" +
+                '}';
     }
 }
