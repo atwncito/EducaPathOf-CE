@@ -18,13 +18,12 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 ---
 ## 💻 Participantes
 
-| Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal |
-|-----------------|----------------|------------------|------------------|
-| Maria Ordeix    | @ana.gomez     | @ines.ordeix     |                  |
-| Juan Yarza      | @juanchoyarza  | @juan.yarza      |                  |
-| Rodrigo Antúnez | @atwncito      | @rodrigo.antunez |                  |
-| Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     |                  |
-| Carlos Araujo   | -------------- | @carlos.araujo   |                  |
+| Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal                                                             |
+|-----------------|----------------|------------------|------------------------------------------------------------------------------|
+| Maria Ordeix    | @ana.gomez     | @ines.ordeix     |                                                                              |
+| Juan Yarza      | @juanchoyarza  | @juan.yarza      |                                                                              |
+| Rodrigo Antúnez | @atwncito      | @rodrigo.antunez | Clase Usuario, Administrador, Docente<br/>Estudiante, Auditor, Psicopedagogo |
+| Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     |                                                                              |
 
 > Se puede verificar la participación individual a través del
 historial de commits en este repositorio exclusivamente, el proyecto
