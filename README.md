@@ -18,12 +18,12 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 ---
 ## 💻 Participantes
 
-| Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal                                                             |
-|-----------------|----------------|------------------|------------------------------------------------------------------------------|
-| Maria Ordeix    | @ana.gomez     | @ines.ordeix     |                                                                              |
-| Juan Yarza      | @juanchoyarza  | @juan.yarza      |                                                                              |
-| Rodrigo Antúnez | @atwncito      | @rodrigo.antunez | Clase Usuario, Administrador, Docente<br/>Estudiante, Auditor, Psicopedagogo |
-| Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     |                                                                              |
+| Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal                                                                                                             |
+|-----------------|----------------|------------------|------------------------------------------------------------------------------------------------------------------------------|
+| Maria Ordeix    | @ana.gomez     | @ines.ordeix     | Clase PlanApoyo                                                                                                              |
+| Juan Yarza      | @juanchoyarza  | @juan.yarza      | Clase Instancia                                                                                                              |
+| Rodrigo Antúnez | @atwncito      | @rodrigo.antunez | Clase Usuario, Administrador, Docente<br/>Estudiante, Auditor, Psicopedagogo<br/>Recordatorio, GestorDeRecordatorios y Tarea |
+| Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     | Clase Perfil                                                                                                                 |
 
 > Se puede verificar la participación individual a través del
 historial de commits en este repositorio exclusivamente. El proyecto
