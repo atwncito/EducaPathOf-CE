@@ -7,6 +7,9 @@ public class Usuario {
 
     // CONSTRUCTOR
     public Usuario(String nombre, String email, String contrasenia) {
+        if (contrasenia == null || contrasenia.length() < 8) {
+            throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres.");
+        }
         this.nombre = nombre;
         this.email = email;
         this.contrasenia = contrasenia;
