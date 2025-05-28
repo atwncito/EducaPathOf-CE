@@ -20,7 +20,7 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 
 | Nombre completo | Usuario GitHub | Usuario GitLab   | Aporte principal                                                                                                             |
 |-----------------|----------------|------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Maria Ordeix    | @ana.gomez     | @ines.ordeix     | Clase PlanApoyo                                                                                                              |
+| Maria Ordeix    | @inesordeix    | @ines.ordeix     | Clase PlanApoyo                                                                                                              |
 | Juan Yarza      | @juanchoyarza  | @juan.yarza      | Clase Instancia                                                                                                              |
 | Rodrigo Antúnez | @atwncito      | @rodrigo.antunez | Clase Usuario, Administrador, Docente<br/>Estudiante, Auditor, Psicopedagogo<br/>Recordatorio, GestorDeRecordatorios y Tarea |
 | Eduardo Luz     | @EduardoLuz-25 | @eduardo.luz     | Clase Perfil                                                                                                                 |
