@@ -1,21 +1,18 @@
 package CasoEstudioUTEC;
 
+/**
+ * Clase que representa el perfil de un usuario en el sistema.
+ * Contiene información como nombre, correo electrónico institucional, rol y estado de actividad del perfil.
+ */
 public class Perfil {
 
     // ATRIBUTOS PRIVADOS
-    private String nombre;               // Nombre completo del usuario
+    private String nombre;               // Nombre del usuario
     private String correoElectronico;    // Correo electrónico institucional del usuario
-    private String rol;                  // Rol del usuario en el sistema (por ejemplo: Administrador, Tutor, etc.)
+    private String rol;                  // Rol del usuario en el sistema (por ejemplo: Administrador, Docente, etc.)
     private boolean activo;              // Indica si el perfil está activo o no
 
-    /**
-     * Constructor que inicializa un perfil con los datos proporcionados.
-     *
-     * @param nombre Nombre del usuario
-     * @param correoElectronico Correo electrónico institucional
-     * @param rol Rol asignado al usuario
-     * @param activo Estado del perfil (activo/inactivo)
-     */
+    // CONSTRUCTOR DE LA CLASE
     public Perfil(String nombre, String correoElectronico, String rol, boolean activo) {
         this.nombre = nombre;
         this.correoElectronico = correoElectronico;

@@ -1,9 +1,15 @@
 package CasoEstudioUTEC;
 
+/**
+ * Clase que representa un administrador dentro del sistema.
+ * Hereda de la clase Usuario y añade un identificador único para el administrador.
+ */
 public class Administrador extends Usuario {
-    private int idAdministrador;
 
-    // CONSTRUCTOR
+    // ATRIBUTO PRIVADO
+    private int idAdministrador;            // Id del administrador
+
+    // CONSTRUCTOR DE LA CLASE
     public Administrador(String nombre, String email, String contrasenia, int idAdministrador) {
         super(nombre, email, contrasenia);
         this.idAdministrador = idAdministrador;

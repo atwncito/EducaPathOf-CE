@@ -1,9 +1,15 @@
 package CasoEstudioUTEC;
 
+/**
+ * Clase que representa un auditor dentro del sistema.
+ * Hereda de la clase Usuario y añade el atributo del área asignada al auditor.
+ */
 public class Auditor extends Usuario {
-    private String areaAsignada;
 
-    // CONSTRUCTOR
+    // ATRIBUTO PRIVADO
+    private String areaAsignada;        // Area a la que pertenece el auditor
+
+    // CONSTRUCTOR DE LA CLASE
     public Auditor(String nombre, String email, String contrasenia, String areaAsignada) {
         super(nombre, email, contrasenia);
         this.areaAsignada = areaAsignada;

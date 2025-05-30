@@ -3,17 +3,24 @@ package CasoEstudioUTEC;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-// Enumeración que define los posibles tipos de instancia que se pueden registrar en el sistema
+// ENUMERACIONES DE APOYO
+// Define los posibles tipos de instancia que se pueden registrar en el sistema
 enum TipoInstancia {
     REUNION, LLAMADA, PEDIDO_INFORME, COORDINACION, EVENTO_INFORMAL
 }
 
-// Enumeración que define quién solicitó la instancia
+// Define quién solicitó la instancia
 enum Solicitante {
     ESTUDIANTE, DIRECCION_EDUCACION
 }
 
+/**
+ * Clase que representa una instancia de reunión, llamada, pedido de informe, coordinación o evento informal.
+ * Contiene información relevante como título, fecha y hora, estudiante asociado, tipo de instancia,
+ * solicitante, estado de realización y otros detalles específicos según el tipo de instancia.
+ */
 public class Instancia {
+
     // ATRIBUTOS PRIVADOS
     private String id;                          // Identificador único de la instancia (UUID)
     private String titulo;                      // Título descriptivo de la instancia
@@ -31,7 +38,7 @@ public class Instancia {
     private String otrasPersonas;
     private String registradoPor;
 
-    // Constructor que inicializa los campos principales de la instancia.
+    // CONSTRUCTOR DE LA CLASE
     public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante) {
         this.id = generarId(); // Genera un identificador único
         this.titulo = titulo;

@@ -1,11 +1,18 @@
 package CasoEstudioUTEC;
 
+/**
+ * Clase que representa un Usuario del sistema.
+ * Contiene información básica como nombre, email y contraseña.
+ * Proporciona métodos para validar el email y cambiar la contraseña.
+ */
 public class Usuario {
-    private String nombre;
-    private String email;
-    private String contrasenia;
 
-    // CONSTRUCTOR
+    // ATRIBUTOS PRIVADOS
+    private String nombre;          // Nombre del usuario
+    private String email;           // Email del usuario
+    private String contrasenia;     // Contrasenia del usuario
+
+    // CONSTRUCTOR DE LA CLASE
     public Usuario(String nombre, String email, String contrasenia) {
         if (contrasenia == null || contrasenia.length() < 8) {
             throw new IllegalArgumentException("La contraseña debe tener al menos 8 caracteres.");

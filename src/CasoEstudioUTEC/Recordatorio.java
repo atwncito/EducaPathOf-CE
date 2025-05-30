@@ -4,9 +4,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 // ENUMERACIONES DE APOYO
-/**
- * Define los tipos posibles de recordatorios.
- */
+// Define los tipos posibles de recordatorios.
 enum TipoRecordatorio {
     LLAMADA,
     NUEVA_REUNION,
@@ -22,7 +20,17 @@ enum Frecuencia {
     MENSUAL
 }
 
+/**
+ * Clase que representa un Recordatorio en el sistema.
+ * Contiene información sobre el título, fecha y hora, tipo, frecuencia,
+ * estado de envío, mensaje personalizado, y la instancia asociada.
+ *
+ * Incluye métodos para gestionar la notificación, verificar si está vencido,
+ * reprogramar la fecha y generar una instancia basada en el recordatorio.
+ */
 public class Recordatorio {
+
+    // ATRIBUTOS PRIVADOS
     private String id;                       // Identificador único del recordatorio
     private String titulo;                   // Título del recordatorio
     private LocalDateTime fechaHora;         // Fecha y hora en que debe activarse el recordatorio
@@ -34,18 +42,7 @@ public class Recordatorio {
     private String creadoPor;                // Usuario que creó el recordatorio
     private String googleCalendarId;         // ID del evento en Google Calendar (si aplica)
 
-    // CONSTRUCTOR
-    /**
-     * Crea un nuevo recordatorio con datos validados.
-     *
-     * @param titulo             Título del recordatorio (obligatorio)
-     * @param fechaHora          Fecha y hora del recordatorio (obligatorio)
-     * @param instanciaAsociada  Instancia relacionada (obligatoria)
-     * @param tipo               Tipo del recordatorio
-     * @param frecuencia         Frecuencia del recordatorio
-     * @param mensaje            Mensaje que se desea enviar
-     * @param creadoPor          Usuario que crea el recordatorio
-     */
+    // CONSTRUCTOR DE LA CLASE
     public Recordatorio(String titulo, LocalDateTime fechaHora, Instancia instanciaAsociada,
                         TipoRecordatorio tipo, Frecuencia frecuencia, String mensaje, String creadoPor) {
         if (titulo == null || titulo.isEmpty())
@@ -81,11 +78,7 @@ public class Recordatorio {
                 + instanciaAsociada.getEstudiante());
     }
 
-    /**
-     * Verifica si la fecha y hora del recordatorio ya ha pasado.
-     *
-     * @return true si ya pasó, false si aún está pendiente
-     */
+    // Verifica si la fecha y hora del recordatorio ya ha pasado.
     public boolean estaVencido() {
         return LocalDateTime.now().isAfter(fechaHora);
     }
@@ -99,10 +92,7 @@ public class Recordatorio {
         return estaVencido() ? "Rojo (Vencido)" : "Verde (Pendiente)";
     }
 
-    /**
-     * Permite generar una nueva instancia en base al recordatorio.
-     * Útil si se necesita formalizar la acción del recordatorio.
-     */
+    // Permite generar una nueva instancia en base al recordatorio.
     public Instancia generarInstanciaDesdeRecordatorio() {
         return new Instancia(
                 titulo,
@@ -113,11 +103,7 @@ public class Recordatorio {
         );
     }
 
-    /**
-     * Cambia la fecha y hora del recordatorio.
-     *
-     * @param nuevaFechaHora Nueva fecha y hora
-     */
+    // Cambia la fecha y hora del recordatorio.
     public void reprogramar(LocalDateTime nuevaFechaHora) {
         this.fechaHora = nuevaFechaHora;
     }

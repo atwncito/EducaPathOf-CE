@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Clase que representa un Plan de Apoyo para un estudiante.
+ * Contiene información sobre objetivos, actividades, cronograma de tareas, recursos asociados,
+ * y un historial de versiones con comentarios de especialistas.
+ */
 public class PlanApoyo {
 
     // ATRIBUTOS PRIVADOS
@@ -15,12 +20,7 @@ public class PlanApoyo {
     private List<VersionPlan> versiones;  // Historial de versiones con comentarios de especialistas (RF9)
     private List<String> recursos;        // Recursos asociados (URLs, documentos, etc.) (RF10)
 
-    /**
-     * Constructor que inicializa el plan con su ID y el del estudiante.
-     *
-     * @param id           Identificador único del plan
-     * @param estudianteId Identificador del estudiante asociado
-     */
+    // CONSTRUCTOR DE LA CLASE
     public PlanApoyo(String id, String estudianteId) {
         this.id = id;
         this.estudianteId = estudianteId;
@@ -31,51 +31,28 @@ public class PlanApoyo {
         this.recursos = new ArrayList<>();
     }
 
-    /**
-     * Agrega un nuevo comentario al historial de versiones del plan.
-     * Representa una nueva revisión del plan por parte de un especialista (RF9).
-     *
-     * @param comentario   Texto del comentario
-     * @param especialista Nombre del especialista que hace el comentario
-     */
+    // Agrega un nuevo comentario al historial de versiones del plan.
     public void agregarComentario(String comentario, String especialista) {
         VersionPlan version = new VersionPlan(comentario, especialista, new Date());
         versiones.add(version);
     }
 
-    /**
-     * Agrega un nuevo recurso al plan (puede ser un link o referencia).
-     *
-     * @param recurso Nombre o enlace del recurso
-     */
+    // Agrega un nuevo recurso al plan (puede ser un link o referencia).
     public void agregarRecurso(String recurso) {
         recursos.add(recurso);
     }
 
-    /**
-     * Agrega un objetivo al plan.
-     *
-     * @param objetivo Descripción del objetivo
-     */
+    // Agrega un objetivo al plan.
     public void agregarObjetivo(String objetivo) {
         objetivos.add(objetivo);
     }
 
-    /**
-     * Agrega una actividad al plan.
-     *
-     * @param actividad Descripción de la actividad
-     */
+    // Agrega una actividad al plan.
     public void agregarActividad(String actividad) {
         actividades.add(actividad);
     }
 
-    /**
-     * Agrega una tarea al cronograma con su fecha límite.
-     *
-     * @param descripcion Descripción de la tarea
-     * @param fechaLimite Fecha límite para cumplir la tarea
-     */
+    // Agrega una tarea al cronograma con su fecha límite.
     public void agregarTarea(String descripcion, Date fechaLimite) {
         cronograma.add(new Tarea(descripcion, fechaLimite));
     }

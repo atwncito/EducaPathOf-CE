@@ -4,10 +4,16 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Clase que gestiona una colección de recordatorios dentro del sistema.
+ * Permite agregar, eliminar, buscar, modificar y listar recordatorios según distintos criterios.
+ */
 public class GestorDeRecordatorios {
+
+    // ATRIBUTO PRIVADO
     private List<Recordatorio> recordatorios;            // Lista para almacenar todos los recordatorios
 
-    // CONSTRUCTOR
+    // CONSTRUCTOR DE LA CLASE
     public GestorDeRecordatorios() {
         this.recordatorios = new ArrayList<>();
     }
