@@ -10,11 +10,8 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 - Cada clase está implementada en su propio archivo `.java`. 
 - Se utilizan relaciones entre clases como asociación, agregación o composición. 
 - Todas las clases implementan el método `toString()` y pueden tener múltiples constructores. 
-- No se incluye el método `main()`, ya que no es necesario para esta entrega. 
----
-## Supuestos de diseño 
-- [Ejemplo: Se asume que un cliente no puede modificar su cédula una vez creado.]
-- [Ejemplo: Se considera que un pedido puede tener una lista vacía de productos al ser creado.]  
+- No se incluye el método `main()`, ya que no es necesario para esta entrega.
+- Las clases se encuentran en la ruta src/CasoEstudioUTEC/
 ---
 ## 💻 Participantes
 
