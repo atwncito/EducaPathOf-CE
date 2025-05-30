@@ -11,7 +11,7 @@ sistema y sus relaciones, sin utilizar diagramas de clases.
 - Se utilizan relaciones entre clases como asociación, agregación o composición. 
 - Todas las clases implementan el método `toString()` y pueden tener múltiples constructores. 
 - No se incluye el método `main()`, ya que no es necesario para esta entrega.
-- Las clases se encuentran en la ruta src/CasoEstudioUTEC/
+- Las clases se encuentran ubicadas en la ruta src/CasoEstudioUTEC/
 ---
 ## 💻 Participantes
 
