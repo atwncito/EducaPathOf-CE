@@ -1,9 +1,9 @@
+/*
 package CasoEstudioUTEC;
 
-/**
  * Clase que representa un docente dentro del sistema.
  * Hereda de la clase Usuario y añade el atributo del área o materia de la que está encargado.
- */
+
 public class Docente extends Usuario {
 
     // ATRIBUTO PRIVADO
@@ -33,3 +33,4 @@ public class Docente extends Usuario {
                 '}';
     }
 }
+*/

@@ -3,28 +3,10 @@ package CasoEstudioUTEC;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-// ENUMERACIONES DE APOYO
-// Define los tipos posibles de recordatorios.
-enum TipoRecordatorio {
-    LLAMADA,
-    NUEVA_REUNION,
-    BRINDAR_INFORMACION,
-    OTRO
-}
-
-//Define la frecuencia con la que se repite un recordatorio.
-enum Frecuencia {
-    UNICO,
-    DIARIO,
-    SEMANAL,
-    MENSUAL
-}
-
 /**
  * Clase que representa un Recordatorio en el sistema.
  * Contiene información sobre el título, fecha y hora, tipo, frecuencia,
  * estado de envío, mensaje personalizado, y la instancia asociada.
- *
  * Incluye métodos para gestionar la notificación, verificar si está vencido,
  * reprogramar la fecha y generar una instancia basada en el recordatorio.
  */
@@ -35,8 +17,8 @@ public class Recordatorio {
     private String titulo;                   // Título del recordatorio
     private LocalDateTime fechaHora;         // Fecha y hora en que debe activarse el recordatorio
     private Instancia instanciaAsociada;     // Instancia del sistema a la que está relacionado el recordatorio
-    private TipoRecordatorio tipo;           // Tipo de recordatorio
-    private Frecuencia frecuencia;           // Frecuencia con la que se repite
+    private String tipoRecordatorio;           // Tipo de recordatorio
+    private String frecuencia;           // Frecuencia con la que se repite
     private boolean enviado;                 // Indica si ya se envió la notificación
     private String mensaje;                  // Mensaje personalizado del recordatorio
     private String creadoPor;                // Usuario que creó el recordatorio
@@ -56,8 +38,8 @@ public class Recordatorio {
         this.titulo = titulo;
         this.fechaHora = fechaHora;
         this.instanciaAsociada = instanciaAsociada;
-        this.tipo = tipo;
-        this.frecuencia = frecuencia;
+        this.tipoRecordatorio = tipo.toString();
+        this.frecuencia = frecuencia.toString();
         this.mensaje = mensaje;
         this.enviado = false;
         this.creadoPor = creadoPor;
@@ -143,20 +125,20 @@ public class Recordatorio {
         this.instanciaAsociada = instanciaAsociada;
     }
 
-    public TipoRecordatorio getTipo() {
-        return tipo;
+    public String getTipo() {
+        return tipoRecordatorio;
     }
 
     public void setTipo(TipoRecordatorio tipo) {
-        this.tipo = tipo;
+        this.tipoRecordatorio = tipoRecordatorio.toString();
     }
 
-    public Frecuencia getFrecuencia() {
+    public String getFrecuencia() {
         return frecuencia;
     }
 
     public void setFrecuencia(Frecuencia frecuencia) {
-        this.frecuencia = frecuencia;
+        this.frecuencia = frecuencia.toString();
     }
 
     public boolean isEnviado() {
@@ -194,8 +176,8 @@ public class Recordatorio {
                 "\n  ID: " + id +
                 "\n  Título: " + titulo +
                 "\n  Fecha y hora: " + fechaHora +
-                "\n  Tipo: " + (tipo != null ? tipo.name() : "N/A") +
-                "\n  Frecuencia: " + (frecuencia != null ? frecuencia.name() : "N/A") +
+                "\n  Tipo: " + tipoRecordatorio +
+                "\n  Frecuencia: " + frecuencia +
                 "\n  Enviado: " + (enviado ? "Sí" : "No") +
                 "\n  Estado: " + getEstadoColor() +
                 "\n  Mensaje: " + (mensaje != null ? mensaje : "Ninguno") +

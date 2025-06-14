@@ -1,9 +1,10 @@
+/*
 package CasoEstudioUTEC;
 
-/**
+
  * Clase que representa un administrador dentro del sistema.
  * Hereda de la clase Usuario y añade un identificador único para el administrador.
- */
+
 public class Administrador extends Usuario {
 
     // ATRIBUTO PRIVADO
@@ -33,3 +34,4 @@ public class Administrador extends Usuario {
                 '}';
     }
 }
+*/

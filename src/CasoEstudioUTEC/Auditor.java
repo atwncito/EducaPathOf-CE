@@ -1,9 +1,9 @@
+/*
 package CasoEstudioUTEC;
 
-/**
  * Clase que representa un auditor dentro del sistema.
  * Hereda de la clase Usuario y añade el atributo del área asignada al auditor.
- */
+
 public class Auditor extends Usuario {
 
     // ATRIBUTO PRIVADO
@@ -33,3 +33,4 @@ public class Auditor extends Usuario {
                 '}';
     }
 }
+*/

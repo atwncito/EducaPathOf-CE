@@ -1,0 +1,48 @@
+package CasoEstudioUTEC;
+import java.util.List;
+
+enum tipoFuncionario {
+    DOCENTE, ADMINISTRADOR, AUDITOR, PSICOPEDAGOGO
+}
+
+public class Funcionario extends Usuario {
+
+    // ATRIBUTOS PRIVADOS
+    private tipoFuncionario tipoFuncionario;         // Tipo de funcionario (Docente, Administrador, Auditor, Psicopedagogo)
+    private List<String> permisos;                   // Lista de permisos con los que cuenta el funcionario
+
+    // CONSTRUCTOR DE LA CLASE
+    public Funcionario(String nombre, String email, String contrasenia, String tipoFuncionario, List<String> permisos) {
+        super(nombre, email, contrasenia);
+        this.tipoFuncionario = CasoEstudioUTEC.tipoFuncionario.valueOf(tipoFuncionario);
+        this.permisos = permisos;
+    }
+
+    // METODOS GET Y SET
+    public tipoFuncionario getTipoFuncionario() {
+        return tipoFuncionario;
+    }
+
+    public void setTipoFuncionario(String tipoFuncionario) {
+        this.tipoFuncionario = CasoEstudioUTEC.tipoFuncionario.valueOf(tipoFuncionario);
+    }
+
+    public List<String> getPermisos() {
+        return permisos;
+    }
+
+    public void setPermisos(List<String> permisos) {
+        this.permisos = permisos;
+    }
+
+    // METODO toString
+    @Override
+    public String toString() {
+        return "Funcionario {" +
+                "nombre=" + getNombre() +
+                ", email='" + getEmail() + '\'' +
+                ", tipoFuncionario='" + tipoFuncionario + '\'' +
+                ", permisos='" + permisos + '\'' +
+                '}';
+    }
+}

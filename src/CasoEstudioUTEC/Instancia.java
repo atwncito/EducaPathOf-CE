@@ -3,17 +3,6 @@ package CasoEstudioUTEC;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-// ENUMERACIONES DE APOYO
-// Define los posibles tipos de instancia que se pueden registrar en el sistema
-enum TipoInstancia {
-    REUNION, LLAMADA, PEDIDO_INFORME, COORDINACION, EVENTO_INFORMAL
-}
-
-// Define quién solicitó la instancia
-enum Solicitante {
-    ESTUDIANTE, DIRECCION_EDUCACION
-}
-
 /**
  * Clase que representa una instancia de reunión, llamada, pedido de informe, coordinación o evento informal.
  * Contiene información relevante como título, fecha y hora, estudiante asociado, tipo de instancia,
@@ -28,8 +17,8 @@ public class Instancia {
     private String estudiante;                  // Estudiante asociado a la instancia
     private String comentarios;                 // Comentarios visibles de la instancia
     private String comentariosConfidenciales;   // Comentarios confidenciales de uso interno
-    private TipoInstancia tipoInstancia;        // Tipo de la instancia (reunión, llamada, etc.)
-    private Solicitante solicitante;            // Quién solicitó la instancia
+    private String tipoInstancia;        // Tipo de la instancia (reunión, llamada, etc.)
+    private String solicitante;            // Quién solicitó la instancia
     private boolean realizada;                  // Marca si la instancia fue realizada
     private String googleCalendarId;            // ID del evento en Google Calendar (si aplica)
 
@@ -40,13 +29,23 @@ public class Instancia {
 
     // CONSTRUCTOR DE LA CLASE
     public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante) {
+        if (!TipoInstancia.esValido(tipoInstancia.toString())) {
+            throw new IllegalArgumentException("Tipo instancia invalido: " + tipoInstancia);
+        }
+        if (!Solicitante.esValido(solicitante.toString())) {
+            throw new IllegalArgumentException("Solicitante invalido: " + solicitante);
+        }
+
         this.id = generarId(); // Genera un identificador único
         this.titulo = titulo;
         this.fechaHora = fechaHora;
         this.estudiante = estudiante;
-        this.tipoInstancia = tipoInstancia;
-        this.solicitante = solicitante;
+        this.tipoInstancia = tipoInstancia.toString();
+        this.solicitante = solicitante.toString();
         this.realizada = false; // Por defecto, la instancia no está realizada
+    }
+
+    public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, String tipoInstancia, String solicitante) {
     }
 
     // Genera un ID único para la instancia utilizando UUID.
@@ -132,20 +131,20 @@ public class Instancia {
         this.comentariosConfidenciales = comentariosConfidenciales;
     }
 
-    public TipoInstancia getTipoInstancia() {
+    public String getTipoInstancia() {
         return tipoInstancia;
     }
 
     public void setTipoInstancia(TipoInstancia tipoInstancia) {
-        this.tipoInstancia = tipoInstancia;
+        this.tipoInstancia = tipoInstancia.toString();
     }
 
-    public Solicitante getSolicitante() {
+    public String getSolicitante() {
         return solicitante;
     }
 
     public void setSolicitante(Solicitante solicitante) {
-        this.solicitante = solicitante;
+        this.solicitante = solicitante.toString();
     }
 
     public boolean isRealizada() {
@@ -197,8 +196,8 @@ public class Instancia {
         sb.append("  Título: ").append(titulo).append("\n");
         sb.append("  Fecha y hora: ").append(fechaHora).append("\n");
         sb.append("  Estudiante: ").append(estudiante).append("\n");
-        sb.append("  Tipo: ").append(tipoInstancia != null ? tipoInstancia.name() : "N/A").append("\n");
-        sb.append("  Solicitante: ").append(solicitante != null ? solicitante.name() : "N/A").append("\n");
+        sb.append("  Tipo: ").append(tipoInstancia).append("\n");
+        sb.append("  Solicitante: ").append(solicitante).append("\n");
         sb.append("  Realizada: ").append(realizada ? "Sí" : "No").append("\n");
         sb.append("  Comentarios: ").append(comentarios != null ? comentarios : "Ninguno").append("\n");
 

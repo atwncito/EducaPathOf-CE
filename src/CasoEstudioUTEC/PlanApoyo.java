@@ -13,7 +13,7 @@ public class PlanApoyo {
 
     // ATRIBUTOS PRIVADOS
     private String id;                    // Identificador único del plan de apoyo
-    private String estudianteId;          // Identificador del estudiante al que pertenece este plan
+    private Estudiante estudiante;        // Objeto de la clase Estudiante
     private List<String> objetivos;       // Lista de objetivos definidos en el plan
     private List<String> actividades;     // Actividades propuestas en el plan
     private List<Tarea> cronograma;       // Lista de tareas con sus fechas límite
@@ -21,9 +21,9 @@ public class PlanApoyo {
     private List<String> recursos;        // Recursos asociados (URLs, documentos, etc.) (RF10)
 
     // CONSTRUCTOR DE LA CLASE
-    public PlanApoyo(String id, String estudianteId) {
+    public PlanApoyo(String id, Estudiante estudiante) {
         this.id = id;
-        this.estudianteId = estudianteId;
+        this.estudiante = estudiante;
         this.objetivos = new ArrayList<>();
         this.actividades = new ArrayList<>();
         this.cronograma = new ArrayList<>();
@@ -88,12 +88,12 @@ public class PlanApoyo {
         this.id = id;
     }
 
-    public String getEstudianteId() {
-        return estudianteId;
+    public Estudiante getEstudiante() {
+        return estudiante;
     }
 
-    public void setEstudianteId(String estudianteId) {
-        this.estudianteId = estudianteId;
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
     }
 
     public List<String> getObjetivos() {
@@ -142,7 +142,7 @@ public class PlanApoyo {
         StringBuilder sb = new StringBuilder();
         sb.append("PlanApoyo {\n");
         sb.append("  ID: ").append(id).append("\n");
-        sb.append("  Estudiante ID: ").append(estudianteId).append("\n");
+        sb.append("  Estudiante ID: ").append(estudiante).append("\n");
 
         sb.append("  Objetivos:\n");
         for (String obj : objetivos) {

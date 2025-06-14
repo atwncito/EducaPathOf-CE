@@ -1,9 +1,10 @@
+/*
 package CasoEstudioUTEC;
 
-/**
+
  * Clase que representa a un Psicopedagogo en el sistema.
  * Hereda de la clase Usuario e incluye un atributo específico para la especialidad del psicopedagogo.
- */
+
 public class Psicopedagogo extends Usuario{
 
     // ATRIBUTO PRIVADO
@@ -33,3 +34,4 @@ public class Psicopedagogo extends Usuario{
                 '}';
     }
 }
+*/
