@@ -3,6 +3,9 @@ package CasoEstudioUTEC;
 import java.util.Date;
 import java.util.LinkedList;
 
+enum itr {
+    ITR_PAYSANDU, ITR_RIVERA, ITR_DURAZNO, ITR_MINAS, ITR_MELO, ITR_FRAYBENTOS
+}
 /**
  * Clase que representa a un estudiante dentro del sistema.
  * Hereda de la clase Usuario y añade atributos específicos relacionados con su información académica, personal y de salud.
@@ -26,12 +29,13 @@ public class Estudiante extends Usuario {
     private String tratamientos;                        // Tratamientos médicos o psicológicos que recibe el estudiante
     private LinkedList<String> documentacionAdjunta;    // Lista de documentos adjuntos relacionados al estudiante
     private String observacionesConfidenciales;         // Observaciones confidenciales reservadas sobre el estudiante
+    private itr itr;                                    // ITR al que pertenece el estudiante
 
     // CONSTRUCTOR DE LA CLASE
     public Estudiante(String nombre, String email, String contrasenia, String carrera, String grupo, String apellido,
                       int numeroCI, Date fechaNacimiento, String direccion, int telefono, int edad, String foto,
                       String sistemaSalud, String motivoDerivacion, String estadoSalud, String comentarios,
-                      String tratamientos, LinkedList<String> documentacionAdjunta, String observacionesConfidenciales) {
+                      String tratamientos, LinkedList<String> documentacionAdjunta, String observacionesConfidenciales, String itr) {
         super(nombre, email, contrasenia);
         this.carrera = carrera;
         this.grupo = grupo;
@@ -49,6 +53,7 @@ public class Estudiante extends Usuario {
         this.tratamientos = tratamientos;
         this.documentacionAdjunta = documentacionAdjunta;
         this.observacionesConfidenciales = observacionesConfidenciales;
+        this.itr = CasoEstudioUTEC.itr.valueOf(itr);
     }
 
     // METODOS GET Y SET
@@ -162,6 +167,14 @@ public class Estudiante extends Usuario {
 
     public void setDocumentacionAdjunta(LinkedList<String> documentacionAdjunta) {
         this.documentacionAdjunta = documentacionAdjunta;
+    }
+
+    public itr getItr() {
+        return this.itr;
+    }
+
+    public void setItr(itr itr) {
+        this.itr = itr;
     }
 
     // METODO toString
