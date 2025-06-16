@@ -5,6 +5,11 @@ enum tipoFuncionario {
     DOCENTE, ADMINISTRADOR, AUDITOR, PSICOPEDAGOGO
 }
 
+/**
+ * Clase que representa a un funcionario dentro del sistema.
+ * Hereda de la clase Usuario y añade atributos específicos relacionados con su rol institucional y permisos asignados.
+ * Permite distinguir entre diferentes tipos de funcionarios y gestionar sus autorizaciones dentro del sistema.
+ */
 public class Funcionario extends Usuario {
 
     // ATRIBUTOS PRIVADOS

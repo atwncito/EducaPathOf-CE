@@ -6,6 +6,7 @@ import java.util.LinkedList;
 enum itr {
     ITR_PAYSANDU, ITR_RIVERA, ITR_DURAZNO, ITR_MINAS, ITR_MELO, ITR_FRAYBENTOS
 }
+
 /**
  * Clase que representa a un estudiante dentro del sistema.
  * Hereda de la clase Usuario y añade atributos específicos relacionados con su información académica, personal y de salud.
