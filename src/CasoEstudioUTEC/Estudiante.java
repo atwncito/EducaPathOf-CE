@@ -200,6 +200,7 @@ public class Estudiante extends Usuario {
                 ", tratamientos='" + tratamientos + '\'' +
                 ", documentacionAdjunta=" + documentacionAdjunta +
                 ", observacionesConfidenciales='" + observacionesConfidenciales + '\'' +
+                ", itr='" + itr + '\'' +
                 '}';
     }
 }
