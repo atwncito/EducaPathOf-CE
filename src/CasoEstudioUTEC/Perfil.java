@@ -1,9 +1,9 @@
-package CasoEstudioUTEC;
+/*package CasoEstudioUTEC;
 
 /**
  * Clase que representa el perfil de un usuario en el sistema.
  * Contiene información como nombre, correo electrónico institucional, rol y estado de actividad del perfil.
- */
+
 public class Perfil {
 
     // ATRIBUTOS PRIVADOS
@@ -64,3 +64,4 @@ public class Perfil {
                 '}';
     }
 }
+*/
