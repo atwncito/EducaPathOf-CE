@@ -31,12 +31,13 @@ public class Estudiante extends Usuario {
     private LinkedList<String> documentacionAdjunta;    // Lista de documentos adjuntos relacionados al estudiante
     private String observacionesConfidenciales;         // Observaciones confidenciales reservadas sobre el estudiante
     private itr itr;                                    // ITR al que pertenece el estudiante
+    private PlanApoyo planApoyo;                        // Plan de apoyo asociado al estudiante
 
     // CONSTRUCTOR DE LA CLASE
     public Estudiante(String nombre, String email, String contrasenia, String carrera, String grupo, String apellido,
                       int numeroCI, Date fechaNacimiento, String direccion, int telefono, int edad, String foto,
                       String sistemaSalud, String motivoDerivacion, String estadoSalud, String comentarios,
-                      String tratamientos, LinkedList<String> documentacionAdjunta, String observacionesConfidenciales, String itr) {
+                      String tratamientos, LinkedList<String> documentacionAdjunta, String observacionesConfidenciales, String itr, PlanApoyo planApoyo) {
         super(nombre, email, contrasenia);
         this.carrera = carrera;
         this.grupo = grupo;
@@ -55,6 +56,7 @@ public class Estudiante extends Usuario {
         this.documentacionAdjunta = documentacionAdjunta;
         this.observacionesConfidenciales = observacionesConfidenciales;
         this.itr = CasoEstudioUTEC.itr.valueOf(itr);
+        this.planApoyo = planApoyo;
     }
 
     // METODOS GET Y SET
@@ -194,6 +196,14 @@ public class Estudiante extends Usuario {
         this.itr = itr;
     }
 
+    public PlanApoyo getPlanApoyo() {
+        return planApoyo;
+    }
+
+    public void setPlanApoyo(PlanApoyo planApoyo) {
+        this.planApoyo = planApoyo;
+    }
+
     // METODO toString
     @Override
     public String toString() {
@@ -216,7 +226,8 @@ public class Estudiante extends Usuario {
                 ", tratamientos='" + getTratamientos() + '\'' +
                 ", documentacionAdjunta='" + getDocumentacionAdjunta() +
                 ", observacionesConfidenciales='" + getObservacionesConfidenciales() + '\'' +
-                ", itr='" + getItr() +
+                ", itr='" + getItr() + '\'' +
+                ", plan apoyo='" + getPlanApoyo() +
                 '}';
     }
 }

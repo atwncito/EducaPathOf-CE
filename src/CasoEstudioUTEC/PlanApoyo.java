@@ -12,7 +12,7 @@ import java.util.List;
 public class PlanApoyo {
 
     // ATRIBUTOS PRIVADOS
-    private String id;                    // Identificador único del plan de apoyo
+    private String idPlanApoyo;                    // Identificador único del plan de apoyo
     private Estudiante estudiante;        // Objeto de la clase Estudiante
     private List<String> objetivos;       // Lista de objetivos definidos en el plan
     private List<String> actividades;     // Actividades propuestas en el plan
@@ -21,8 +21,8 @@ public class PlanApoyo {
     private List<String> recursos;        // Recursos asociados (URLs, documentos, etc.) (RF10)
 
     // CONSTRUCTOR DE LA CLASE
-    public PlanApoyo(String id, Estudiante estudiante) {
-        this.id = id;
+    public PlanApoyo(String idPlanApoyo, Estudiante estudiante) {
+        this.idPlanApoyo = idPlanApoyo;
         this.estudiante = estudiante;
         this.objetivos = new ArrayList<>();
         this.actividades = new ArrayList<>();
@@ -81,11 +81,11 @@ public class PlanApoyo {
 
     // METODOS GET Y SET
     public String getId() {
-        return id;
+        return idPlanApoyo;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.idPlanApoyo = id;
     }
 
     public Estudiante getEstudiante() {
