@@ -53,7 +53,7 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario {" +
-                "nombre=" + getNombre() +
+                "nombre='" + getNombre() +
                 ", email='" + getEmail() + '\'' +
                 '}';
     }

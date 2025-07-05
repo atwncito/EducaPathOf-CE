@@ -154,6 +154,22 @@ public class Estudiante extends Usuario {
         this.estadoSalud = estadoSalud;
     }
 
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public String getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(String tratamientos) {
+        this.tratamientos = tratamientos;
+    }
+
     public String getObservacionesConfidenciales() {
         return observacionesConfidenciales;
     }
@@ -183,24 +199,24 @@ public class Estudiante extends Usuario {
     public String toString() {
         return "Estudiante {" +
                 "nombre='" + getNombre() + '\'' +
-                ", apellido='" + apellido + '\'' +
+                ", apellido='" + getApellido() + '\'' +
                 ", email='" + getEmail() + '\'' +
-                ", carrera='" + carrera + '\'' +
-                ", grupo='" + grupo + '\'' +
-                ", numeroCI=" + numeroCI +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", edad=" + edad +
-                ", foto='" + foto + '\'' +
-                ", sistemaSalud='" + sistemaSalud + '\'' +
-                ", motivoDerivacion='" + motivoDerivacion + '\'' +
-                ", estadoSalud='" + estadoSalud + '\'' +
-                ", comentarios='" + comentarios + '\'' +
-                ", tratamientos='" + tratamientos + '\'' +
-                ", documentacionAdjunta=" + documentacionAdjunta +
-                ", observacionesConfidenciales='" + observacionesConfidenciales + '\'' +
-                ", itr='" + itr + '\'' +
+                ", carrera='" + getCarrera() + '\'' +
+                ", grupo='" + getGrupo() + '\'' +
+                ", numeroCI='" + getNumeroCI() +
+                ", fechaNacimiento='" + getFechaNacimiento() +
+                ", direccion='" + getDireccion() + '\'' +
+                ", telefono='" + getTelefono() +
+                ", edad='" + getEdad() +
+                ", foto='" + getFoto() + '\'' +
+                ", sistemaSalud='" + getSistemaSalud() + '\'' +
+                ", motivoDerivacion='" + getMotivoDerivacion() + '\'' +
+                ", estadoSalud='" + getEstadoSalud() + '\'' +
+                ", comentarios='" + getComentarios() + '\'' +
+                ", tratamientos='" + getTratamientos() + '\'' +
+                ", documentacionAdjunta='" + getDocumentacionAdjunta() +
+                ", observacionesConfidenciales='" + getObservacionesConfidenciales() + '\'' +
+                ", itr='" + getItr() +
                 '}';
     }
 }

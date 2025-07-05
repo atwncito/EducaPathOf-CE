@@ -49,9 +49,9 @@ public class VersionPlan {
     @Override
     public String toString() {
         return "Versión del Plan {" +
-                "Comentario: '" + comentario + '\'' +
-                ", Especialista: '" + especialista + '\'' +
-                ", Fecha: " + fecha +
+                "comentario='" + getComentario() + '\'' +
+                ", especialista='" + getEspecialista() + '\'' +
+                ", fecha='" + getFecha() +
                 '}';
     }
 }

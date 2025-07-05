@@ -13,33 +13,33 @@ import java.util.UUID;
 public class Recordatorio {
 
     // ATRIBUTOS PRIVADOS
-    private String id;                       // Identificador único del recordatorio
-    private String titulo;                   // Título del recordatorio
-    private LocalDateTime fechaHora;         // Fecha y hora en que debe activarse el recordatorio
-    private Instancia instanciaAsociada;     // Instancia del sistema a la que está relacionado el recordatorio
-    private String tipoRecordatorio;           // Tipo de recordatorio
-    private String frecuencia;           // Frecuencia con la que se repite
-    private boolean enviado;                 // Indica si ya se envió la notificación
-    private String mensaje;                  // Mensaje personalizado del recordatorio
-    private String creadoPor;                // Usuario que creó el recordatorio
-    private String googleCalendarId;         // ID del evento en Google Calendar (si aplica)
+    private String idRecordatorio;                  // Identificador único del recordatorio
+    private String titulo;                          // Título del recordatorio
+    private LocalDateTime fechaHora;                // Fecha y hora en que debe activarse el recordatorio
+    private Instancia instancia;                    // Instancia del sistema a la que está relacionado el recordatorio
+    private TipoRecordatorio tipoRecordatorio;      // Tipo de recordatorio
+    private Frecuencia frecuencia;                  // Frecuencia con la que se repite
+    private boolean enviado;                        // Indica si ya se envió la notificación
+    private String mensaje;                         // Mensaje personalizado del recordatorio
+    private String creadoPor;                       // Usuario que creó el recordatorio
+    private String googleCalendarId;                // ID del evento en Google Calendar (si aplica)
 
     // CONSTRUCTOR DE LA CLASE
-    public Recordatorio(String titulo, LocalDateTime fechaHora, Instancia instanciaAsociada,
+    public Recordatorio(String titulo, LocalDateTime fechaHora, Instancia instancia,
                         TipoRecordatorio tipo, Frecuencia frecuencia, String mensaje, String creadoPor) {
         if (titulo == null || titulo.isEmpty())
             throw new IllegalArgumentException("El título es obligatorio.");
         if (fechaHora == null)
             throw new IllegalArgumentException("La fecha y hora son obligatorias.");
-        if (instanciaAsociada == null)
+        if (instancia == null)
             throw new IllegalArgumentException("Debe asociarse a una instancia.");
 
-        this.id = generarId();
+        this.idRecordatorio = generarId();
         this.titulo = titulo;
         this.fechaHora = fechaHora;
-        this.instanciaAsociada = instanciaAsociada;
-        this.tipoRecordatorio = tipo.toString();
-        this.frecuencia = frecuencia.toString();
+        this.instancia = instancia;
+        this.tipoRecordatorio = tipo;
+        this.frecuencia = frecuencia;
         this.mensaje = mensaje;
         this.enviado = false;
         this.creadoPor = creadoPor;
@@ -57,7 +57,7 @@ public class Recordatorio {
     public void enviarNotificacion() {
         this.enviado = true;
         System.out.println("Notificación enviada al correo institucional del estudiante: "
-                + instanciaAsociada.getEstudiante());
+                + instancia.getEstudiante());
     }
 
     // Verifica si la fecha y hora del recordatorio ya ha pasado.
@@ -79,9 +79,10 @@ public class Recordatorio {
         return new Instancia(
                 titulo,
                 fechaHora,
-                instanciaAsociada.getEstudiante(),
-                instanciaAsociada.getTipoInstancia(),
-                instanciaAsociada.getSolicitante()
+                instancia.getEstudiante(),
+                instancia.getTipoInstancia(),
+                instancia.getSolicitante(),
+                instancia.getFuncionario()
         );
     }
 
@@ -91,8 +92,8 @@ public class Recordatorio {
     }
 
     // METODOS GET Y SET
-    public String getId() {
-        return id;
+    public String getIdRecordatorio() {
+        return idRecordatorio;
     }
 
     public String getTitulo() {
@@ -116,29 +117,29 @@ public class Recordatorio {
     }
 
     public Instancia getInstanciaAsociada() {
-        return instanciaAsociada;
+        return instancia;
     }
 
     public void setInstanciaAsociada(Instancia instanciaAsociada) {
         if (instanciaAsociada == null)
             throw new IllegalArgumentException("Debe asociarse a una instancia.");
-        this.instanciaAsociada = instanciaAsociada;
+        this.instancia = instanciaAsociada;
     }
 
-    public String getTipo() {
+    public TipoRecordatorio getTipoRecordatorio() {
         return tipoRecordatorio;
     }
 
-    public void setTipo(TipoRecordatorio tipo) {
-        this.tipoRecordatorio = tipoRecordatorio.toString();
+    public void setTipo(TipoRecordatorio tipoRecordatorio) {
+        this.tipoRecordatorio = tipoRecordatorio;
     }
 
-    public String getFrecuencia() {
+    public Frecuencia getFrecuencia() {
         return frecuencia;
     }
 
     public void setFrecuencia(Frecuencia frecuencia) {
-        this.frecuencia = frecuencia.toString();
+        this.frecuencia = frecuencia;
     }
 
     public boolean isEnviado() {
@@ -173,17 +174,17 @@ public class Recordatorio {
     @Override
     public String toString() {
         return "Recordatorio {" +
-                "\n  ID: " + id +
-                "\n  Título: " + titulo +
-                "\n  Fecha y hora: " + fechaHora +
-                "\n  Tipo: " + tipoRecordatorio +
-                "\n  Frecuencia: " + frecuencia +
-                "\n  Enviado: " + (enviado ? "Sí" : "No") +
-                "\n  Estado: " + getEstadoColor() +
-                "\n  Mensaje: " + (mensaje != null ? mensaje : "Ninguno") +
-                "\n  Creado por: " + (creadoPor != null ? creadoPor : "Desconocido") +
-                "\n  Google Calendar ID: " + (googleCalendarId != null ? googleCalendarId : "No asignado") +
-                "\n  Instancia Asociada: " + (instanciaAsociada != null ? instanciaAsociada.getId() : "N/A") +
-                "\n}";
+                "ID='" + getIdRecordatorio() +
+                ", titulo='" + getTitulo() + '\'' +
+                ", fecha y hora='" + getFechaHora()+ '\'' +
+                ", tipo='" + getTipoRecordatorio() + '\'' +
+                ", frecuencia='" + getFrecuencia() + '\'' +
+                ", enviado='" + isEnviado() + '\'' +
+                ", estado='" + getEstadoColor() + '\'' +
+                ", mensaje='" + getMensaje() + '\'' +
+                ", creado por='" + getCreadoPor() + '\'' +
+                ", google calendar ID='" + getGoogleCalendarId() + '\'' +
+                ", instancia asociada=" + getInstanciaAsociada() +
+                '}';
     }
 }

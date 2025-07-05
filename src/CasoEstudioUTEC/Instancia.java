@@ -11,24 +11,20 @@ import java.util.UUID;
 public class Instancia {
 
     // ATRIBUTOS PRIVADOS
-    private String id;                          // Identificador único de la instancia (UUID)
+    private String idInstancia;                          // Identificador único de la instancia (UUID)
     private String titulo;                      // Título descriptivo de la instancia
     private LocalDateTime fechaHora;            // Fecha y hora en la que se realiza la instancia
-    private String estudiante;                  // Estudiante asociado a la instancia
+    private Estudiante estudiante;              // Estudiante asociado a la instancia
     private String comentarios;                 // Comentarios visibles de la instancia
     private String comentariosConfidenciales;   // Comentarios confidenciales de uso interno
-    private String tipoInstancia;        // Tipo de la instancia (reunión, llamada, etc.)
-    private String solicitante;            // Quién solicitó la instancia
+    private TipoInstancia tipoInstancia;        // Tipo de la instancia (reunión, llamada, etc.)
+    private Solicitante solicitante;            // Quién solicitó la instancia
     private boolean realizada;                  // Marca si la instancia fue realizada
     private String googleCalendarId;            // ID del evento en Google Calendar (si aplica)
-
-    // Campos adicionales para EVENTO_INFORMAL
-    private String lugar;
-    private String otrasPersonas;
-    private String registradoPor;
+    private Funcionario funcionario;            // Funcionario que creo la instancia
 
     // CONSTRUCTOR DE LA CLASE
-    public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante) {
+    public Instancia(String titulo, LocalDateTime fechaHora, Estudiante estudiante, TipoInstancia tipoInstancia, Solicitante solicitante, Funcionario funcionario) {
         if (!TipoInstancia.esValido(tipoInstancia.toString())) {
             throw new IllegalArgumentException("Tipo instancia invalido: " + tipoInstancia);
         }
@@ -36,16 +32,14 @@ public class Instancia {
             throw new IllegalArgumentException("Solicitante invalido: " + solicitante);
         }
 
-        this.id = generarId(); // Genera un identificador único
+        this.idInstancia = generarId(); // Genera un identificador único
         this.titulo = titulo;
         this.fechaHora = fechaHora;
         this.estudiante = estudiante;
-        this.tipoInstancia = tipoInstancia.toString();
-        this.solicitante = solicitante.toString();
+        this.tipoInstancia = tipoInstancia;
+        this.solicitante = solicitante;
+        this.funcionario = funcionario;
         this.realizada = false; // Por defecto, la instancia no está realizada
-    }
-
-    public Instancia(String titulo, LocalDateTime fechaHora, String estudiante, String tipoInstancia, String solicitante) {
     }
 
     // Genera un ID único para la instancia utilizando UUID.
@@ -61,16 +55,9 @@ public class Instancia {
         notificarUsuario(); // Simulación de notificación
     }
 
-    // Agrega detalles adicionales si el tipo de instancia es un evento informal.
-    public void agregarDetallesEventoInformal(String lugar, String otrasPersonas, String registradoPor) {
-        this.lugar = lugar;
-        this.otrasPersonas = otrasPersonas;
-        this.registradoPor = registradoPor;
-    }
-
     //Clona la instancia actual (copia sus datos relevantes).
     public Instancia clonar() {
-        Instancia copia = new Instancia(this.titulo, this.fechaHora, this.estudiante, this.tipoInstancia, this.solicitante);
+        Instancia copia = new Instancia(this.titulo, this.fechaHora, this.estudiante, this.tipoInstancia, this.solicitante, this.funcionario);
         copia.comentarios = this.comentarios;
         copia.comentariosConfidenciales = this.comentariosConfidenciales;
         return copia;
@@ -83,12 +70,12 @@ public class Instancia {
 
     // Simula una notificación al usuario al registrar la instancia.
     private void notificarUsuario() {
-        System.out.println("Instancia registrada. ID: " + this.id);
+        System.out.println("Instancia registrada. ID: " + this.idInstancia);
     }
 
     // METODOS GET Y SET
-    public String getId() {
-        return id;
+    public String getIdInstancia() {
+        return idInstancia;
     }
 
     public String getTitulo() {
@@ -107,16 +94,16 @@ public class Instancia {
         this.fechaHora = fechaHora;
     }
 
-    public String getEstudiante() {
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public Estudiante getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(String estudiante) {
+    public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
-    }
-
-    public String getComentarios() {
-        return comentarios;
     }
 
     public void setComentarios(String comentarios) {
@@ -131,20 +118,20 @@ public class Instancia {
         this.comentariosConfidenciales = comentariosConfidenciales;
     }
 
-    public String getTipoInstancia() {
+    public TipoInstancia getTipoInstancia() {
         return tipoInstancia;
     }
 
     public void setTipoInstancia(TipoInstancia tipoInstancia) {
-        this.tipoInstancia = tipoInstancia.toString();
+        this.tipoInstancia = tipoInstancia;
     }
 
-    public String getSolicitante() {
+    public Solicitante getSolicitante() {
         return solicitante;
     }
 
     public void setSolicitante(Solicitante solicitante) {
-        this.solicitante = solicitante.toString();
+        this.solicitante = solicitante;
     }
 
     public boolean isRealizada() {
@@ -163,52 +150,28 @@ public class Instancia {
         this.googleCalendarId = googleCalendarId;
     }
 
-    public String getLugar() {
-        return lugar;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
-    }
-
-    public String getOtrasPersonas() {
-        return otrasPersonas;
-    }
-
-    public void setOtrasPersonas(String otrasPersonas) {
-        this.otrasPersonas = otrasPersonas;
-    }
-
-    public String getRegistradoPor() {
-        return registradoPor;
-    }
-
-    public void setRegistradoPor(String registradoPor) {
-        this.registradoPor = registradoPor;
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
     // METODO toString
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Instancia {\n");
-        sb.append("  ID: ").append(id).append("\n");
-        sb.append("  Título: ").append(titulo).append("\n");
-        sb.append("  Fecha y hora: ").append(fechaHora).append("\n");
-        sb.append("  Estudiante: ").append(estudiante).append("\n");
-        sb.append("  Tipo: ").append(tipoInstancia).append("\n");
-        sb.append("  Solicitante: ").append(solicitante).append("\n");
-        sb.append("  Realizada: ").append(realizada ? "Sí" : "No").append("\n");
-        sb.append("  Comentarios: ").append(comentarios != null ? comentarios : "Ninguno").append("\n");
-
-        if (tipoInstancia == TipoInstancia.EVENTO_INFORMAL) {
-            sb.append("  Lugar: ").append(lugar != null ? lugar : "No especificado").append("\n");
-            sb.append("  Otras personas: ").append(otrasPersonas != null ? otrasPersonas : "Ninguna").append("\n");
-            sb.append("  Registrado por: ").append(registradoPor != null ? registradoPor : "Desconocido").append("\n");
-        }
-
-        sb.append("  Google Calendar ID: ").append(googleCalendarId != null ? googleCalendarId : "No asignado").append("\n");
-        sb.append("}");
-        return sb.toString();
+        return "Instancia {" +
+                "ID='" + getIdInstancia() +
+                ", titulo='" + getTitulo() + '\'' +
+                ", fecha y hora='" + getFechaHora() + '\'' +
+                ", estudiante='" + getEstudiante() + '\'' +
+                ", tipo=" + getTipoInstancia() + '\'' +
+                ", solicitante='" + getSolicitante() + '\'' +
+                ", realiaza='" + isRealizada() + '\'' +
+                ", comentarios='" + getComentarios() + '\'' +
+                ", google calendar ID='" + getGoogleCalendarId() + '\'' +
+                ", funcionario='" + getFuncionario() +
+                '}';
     }
 }

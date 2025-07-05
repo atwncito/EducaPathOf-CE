@@ -16,8 +16,8 @@ import java.time.LocalDateTime;
     private String registradoPor;       // Persona que registró el evento
 
     // Constructor
-    public Incidencia(String titulo, LocalDateTime fechaHora, String estudiante, TipoInstancia tipoInstancia, Solicitante solicitante, String lugar, String involucrado, String registradoPor) {
-        super(titulo, fechaHora, estudiante, tipoInstancia, solicitante);
+    public Incidencia(String titulo, LocalDateTime fechaHora, Estudiante estudiante, TipoInstancia tipoInstancia, Solicitante solicitante, Funcionario funcionario, String lugar, String involucrado, String registradoPor) {
+        super(titulo, fechaHora, estudiante, tipoInstancia, solicitante, funcionario);
         this.lugar = lugar;
         this.involucrado = involucrado;
         this.registradoPor = registradoPor;
@@ -51,11 +51,10 @@ import java.time.LocalDateTime;
     // METODO toString
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(super.toString());
-        sb.append("  Lugar: ").append(lugar).append("\n");
-        sb.append("  Involucrado: ").append(involucrado).append("\n");
-        sb.append("  Registrado por: ").append(registradoPor).append("\n");
-        return sb.toString();
+    return "Incidencia {" +
+            "lugar='" + getLugar() +
+            ", involucrado='" + getInvolucrado() + '\'' +
+            ", registrado por='" + getRegistradoPor() +
+            '}';
     }
-
 }

@@ -26,13 +26,13 @@ public class GestorDeRecordatorios {
 
     // Elimina un recordatorio por su ID y devuelve true si fue eliminado
     public boolean eliminarRecordatorioPorId(String id) {
-        return recordatorios.removeIf(r -> r.getId().equals(id));
+        return recordatorios.removeIf(r -> r.getIdRecordatorio().equals(id));
     }
 
     // Busca un recordatorio por su ID y lo devuelve si lo encuentra
     public Recordatorio buscarPorId(String id) {
         return recordatorios.stream()
-                .filter(r -> r.getId().equals(id))
+                .filter(r -> r.getIdRecordatorio().equals(id))
                 .findFirst()
                 .orElse(null);
     }
@@ -40,7 +40,7 @@ public class GestorDeRecordatorios {
     // Devuelve todos los recordatorios asociados a una instancia por su ID
     public List<Recordatorio> buscarPorInstancia(String idInstancia) {
         return recordatorios.stream()
-                .filter(r -> r.getInstanciaAsociada().getId().equals(idInstancia))
+                .filter(r -> r.getInstanciaAsociada().getIdInstancia().equals(idInstancia))
                 .collect(Collectors.toList());
     }
 
@@ -74,7 +74,7 @@ public class GestorDeRecordatorios {
                 .forEach(r -> {
                     String color = r.getEstadoColor(); // Asume que devuelve un String representando el estado (visual)
                     System.out.println("- [" + r.getFechaHora() + "] " + r.getTitulo()
-                            + " | Instancia: " + r.getInstanciaAsociada().getId()
+                            + " | Instancia: " + r.getInstanciaAsociada().getIdInstancia()
                             + " | Estado: " + color);
                 });
     }
@@ -87,11 +87,8 @@ public class GestorDeRecordatorios {
     // METODO toString
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("GestorDeRecordatorios: ").append(recordatorios.size()).append(" recordatorios\n");
-        for (Recordatorio r : recordatorios) {
-            sb.append(r.toString()).append("\n");
-        }
-        return sb.toString();
+        return "GestorDeRecordatorios {" +
+                "total='" + recordatorios.size() + " recordatorios\n" +
+                '}';
     }
 }

@@ -139,39 +139,15 @@ public class PlanApoyo {
     // METODO toString
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("PlanApoyo {\n");
-        sb.append("  ID: ").append(id).append("\n");
-        sb.append("  Estudiante ID: ").append(estudiante).append("\n");
-
-        sb.append("  Objetivos:\n");
-        for (String obj : objetivos) {
-            sb.append("    - ").append(obj).append("\n");
-        }
-
-        sb.append("  Actividades:\n");
-        for (String act : actividades) {
-            sb.append("    - ").append(act).append("\n");
-        }
-
-        sb.append("  Cronograma:\n");
-        for (Tarea t : cronograma) {
-            sb.append("    - ").append(t.getDescripcion()).append(" (fecha límite: ").append(t.getFechaLimite()).append(")\n");
-        }
-
-        sb.append("  Recursos:\n");
-        for (String recurso : recursos) {
-            sb.append("    - ").append(recurso).append("\n");
-        }
-
-        sb.append("  Versiones:\n");
-        for (VersionPlan v : versiones) {
-            sb.append("    - [").append(v.getFecha()).append("] ")
-                    .append(v.getEspecialista()).append(": ")
-                    .append(v.getComentario()).append("\n");
-        }
-
-        sb.append("}");
-        return sb.toString();
+        return "PlanApoyo {" +
+                "ID='" + getId() +
+                ", estudiante='" + getEstudiante() + '\'' +
+                ", objetivos='" + getObjetivos() + '\'' +
+                ", actividades='" + getActividades() + '\'' +
+                ", cronograma='" + getCronograma() + '\'' +
+                ", recursos='" + getRecursos() + '\'' +
+                ", versiones='" + getVersiones() +
+                '}';
     }
+
 }

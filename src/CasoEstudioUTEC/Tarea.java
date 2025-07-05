@@ -39,8 +39,8 @@ public class Tarea {
     @Override
     public String toString() {
         return "Tarea {" +
-                "Descripción: '" + descripcion + '\'' +
-                ", Fecha límite: " + fechaLimite +
+                "descripción='" + getDescripcion() + '\'' +
+                ", fecha límite='" + getFechaLimite() +
                 '}';
     }
 }
