@@ -12,12 +12,14 @@ public class VersionPlan {
     private String comentario;            // Comentario u observación realizada por el especialista sobre el plan
     private String especialista;          // Nombre o identificador del especialista que hizo el comentario
     private Date fecha;                   // Fecha en la que se hizo el comentario (versión del plan)
+    private PlanApoyo planApoyo;          // Plan de apoyo al que pertenece la version
 
     // CONSTRUCTOR DE LA CLASE
-    public VersionPlan(String comentario, String especialista, Date fecha) {
+    public VersionPlan(String comentario, String especialista, Date fecha, PlanApoyo planApoyo) {
         this.comentario = comentario;
         this.especialista = especialista;
         this.fecha = fecha;
+        this.planApoyo = planApoyo;
     }
 
     // METODOS GET Y SET
@@ -45,13 +47,22 @@ public class VersionPlan {
         this.fecha = fecha;
     }
 
+    public PlanApoyo getPlanApoyo() {
+        return planApoyo;
+    }
+
+    public void setPlanApoyo(PlanApoyo planApoyo) {
+        this.planApoyo = planApoyo;
+    }
+
     // METODO toString
     @Override
     public String toString() {
         return "Versión del Plan {" +
                 "comentario='" + getComentario() + '\'' +
                 ", especialista='" + getEspecialista() + '\'' +
-                ", fecha='" + getFecha() +
+                ", fecha='" + getFecha() + '\'' +
+                ", plan apoyo='" + getPlanApoyo() +
                 '}';
     }
 }
