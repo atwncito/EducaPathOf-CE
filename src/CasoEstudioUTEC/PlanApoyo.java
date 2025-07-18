@@ -17,7 +17,6 @@ public class PlanApoyo {
     private List<String> objetivos;       // Lista de objetivos definidos en el plan
     private List<String> actividades;     // Actividades propuestas en el plan
     private List<Tarea> cronograma;       // Lista de tareas con sus fechas límite
-    private List<VersionPlan> versiones;  // Historial de versiones con comentarios de especialistas (RF9)
     private List<String> recursos;        // Recursos asociados (URLs, documentos, etc.) (RF10)
 
     // CONSTRUCTOR DE LA CLASE
@@ -27,14 +26,7 @@ public class PlanApoyo {
         this.objetivos = new ArrayList<>();
         this.actividades = new ArrayList<>();
         this.cronograma = new ArrayList<>();
-        this.versiones = new ArrayList<>();
         this.recursos = new ArrayList<>();
-    }
-
-    // Agrega un nuevo comentario al historial de versiones del plan.
-    public void agregarComentario(String comentario, String especialista) {
-        VersionPlan version = new VersionPlan(comentario, especialista, new Date());
-        versiones.add(version);
     }
 
     // Agrega un nuevo recurso al plan (puede ser un link o referencia).
@@ -98,14 +90,6 @@ public class PlanApoyo {
         this.cronograma = cronograma;
     }
 
-    public List<VersionPlan> getVersiones() {
-        return versiones;
-    }
-
-    public void setVersiones(List<VersionPlan> versiones) {
-        this.versiones = versiones;
-    }
-
     public List<String> getRecursos() {
         return recursos;
     }
@@ -123,8 +107,7 @@ public class PlanApoyo {
                 ", objetivos='" + getObjetivos() + '\'' +
                 ", actividades='" + getActividades() + '\'' +
                 ", cronograma='" + getCronograma() + '\'' +
-                ", recursos='" + getRecursos() + '\'' +
-                ", versiones='" + getVersiones() +
+                ", recursos='" + getRecursos() +
                 '}';
     }
 
