@@ -57,28 +57,6 @@ public class PlanApoyo {
         cronograma.add(new Tarea(descripcion, fechaLimite));
     }
 
-    /**
-     * Muestra todos los detalles del plan en consola:
-     * - Objetivos
-     * - Actividades
-     * - Cronograma
-     * - Recursos
-     * - Historial de versiones (comentarios)
-     */
-    public void mostrarPlan() {
-        System.out.println("Objetivos: " + objetivos);
-        System.out.println("Actividades: " + actividades);
-        System.out.println("Cronograma: ");
-        for (Tarea t : cronograma) {
-            System.out.println("- " + t.getDescripcion() + " para el " + t.getFechaLimite());
-        }
-        System.out.println("Recursos: " + recursos);
-        System.out.println("Historial de versiones:");
-        for (VersionPlan v : versiones) {
-            System.out.println("- [" + v.getFecha() + "] " + v.getEspecialista() + ": " + v.getComentario());
-        }
-    }
-
     // METODOS GET Y SET
     public String getId() {
         return idPlanApoyo;

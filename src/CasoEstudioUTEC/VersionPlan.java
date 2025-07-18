@@ -15,7 +15,7 @@ public class VersionPlan {
     private PlanApoyo planApoyo;          // Plan de apoyo al que pertenece la version
 
     // CONSTRUCTOR DE LA CLASE
-    public VersionPlan(String comentario, String especialista, Date fecha, PlanApoyo planApoyo) {
+    public VersionPlan(String comentario, String especialista, Date fecha) {
         this.comentario = comentario;
         this.especialista = especialista;
         this.fecha = fecha;

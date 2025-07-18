@@ -16,7 +16,7 @@ public class Funcionario extends Usuario {
     // ATRIBUTOS PRIVADOS
     private tipoFuncionario tipoFuncionario;                        // Tipo de funcionario (Docente, Administrador, Auditor, Psicopedagogo)
     private List<String> permisos;                                  // Lista de permisos con los que cuenta el funcionario
-    private ArrayList<Instancia> instancias;    // Lista para almacenar todas las instancias que creo el funcionario
+    private ArrayList<Instancia> instancias;                        // Lista para almacenar todas las instancias que creo el funcionario
 
 
     // CONSTRUCTOR DE LA CLASE

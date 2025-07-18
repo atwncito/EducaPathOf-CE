@@ -120,10 +120,10 @@ public class Recordatorio {
         return instancia;
     }
 
-    public void setInstanciaAsociada(Instancia instanciaAsociada) {
-        if (instanciaAsociada == null)
+    public void setInstanciaAsociada(Instancia instancia) {
+        if (instancia == null)
             throw new IllegalArgumentException("Debe asociarse a una instancia.");
-        this.instancia = instanciaAsociada;
+        this.instancia = instancia;
     }
 
     public TipoRecordatorio getTipoRecordatorio() {
