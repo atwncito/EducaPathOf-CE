@@ -82,7 +82,8 @@ public class Recordatorio {
                 instancia.getEstudiante(),
                 instancia.getTipoInstancia(),
                 instancia.getSolicitante(),
-                instancia.getFuncionario()
+                instancia.getFuncionario(),
+                instancia.getRecordatorios()
         );
     }
 
