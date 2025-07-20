@@ -56,8 +56,7 @@ public class Recordatorio {
      */
     public void enviarNotificacion() {
         this.enviado = true;
-        System.out.println("Notificación enviada al correo institucional del estudiante: "
-                + instancia.getEstudiante());
+        System.out.println("Notificación enviada al correo institucional del estudiante: " + instancia.getEstudiante());
     }
 
     // Verifica si la fecha y hora del recordatorio ya ha pasado.

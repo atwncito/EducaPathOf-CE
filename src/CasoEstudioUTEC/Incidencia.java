@@ -1,6 +1,7 @@
 package CasoEstudioUTEC;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  * Clase que representa una instancia específica de tipo incidencia dentro del sistema de seguimiento estudiantil.
@@ -16,8 +17,8 @@ import java.time.LocalDateTime;
     private String registradoPor;       // Persona que registró el evento
 
     // Constructor
-    public Incidencia(String titulo, LocalDateTime fechaHora, Estudiante estudiante, TipoInstancia tipoInstancia, Solicitante solicitante, Funcionario funcionario, String lugar, String involucrado, String registradoPor) {
-        super(titulo, fechaHora, estudiante, tipoInstancia, solicitante, funcionario);
+    public Incidencia(String titulo, LocalDateTime fechaHora, Estudiante estudiante, TipoInstancia tipoInstancia, Solicitante solicitante, Funcionario funcionario, ArrayList<Recordatorio> recordatorios, String lugar, String involucrado, String registradoPor) {
+        super(titulo, fechaHora, estudiante, tipoInstancia, solicitante, funcionario, recordatorios);
         this.lugar = lugar;
         this.involucrado = involucrado;
         this.registradoPor = registradoPor;

@@ -98,16 +98,16 @@ public class Instancia {
         this.fechaHora = fechaHora;
     }
 
-    public String getComentarios() {
-        return comentarios;
-    }
-
     public Estudiante getEstudiante() {
         return estudiante;
     }
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
+    }
+
+    public String getComentarios() {
+        return comentarios;
     }
 
     public void setComentarios(String comentarios) {
@@ -180,7 +180,7 @@ public class Instancia {
                 ", estudiante='" + getEstudiante() + '\'' +
                 ", tipo=" + getTipoInstancia() + '\'' +
                 ", solicitante='" + getSolicitante() + '\'' +
-                ", realiaza='" + isRealizada() + '\'' +
+                ", realiza='" + isRealizada() + '\'' +
                 ", comentarios='" + getComentarios() + '\'' +
                 ", google calendar ID='" + getGoogleCalendarId() + '\'' +
                 ", funcionario='" + getFuncionario() + '\'' +
