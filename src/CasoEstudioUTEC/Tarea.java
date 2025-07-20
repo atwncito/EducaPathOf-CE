@@ -14,7 +14,7 @@ public class Tarea {
     private PlanApoyo planApoyo;      // Plan de apoyo al que está asociado la tarea.
 
     // CONSTRUCTOR DE LA CLASE
-    public Tarea(String descripcion, Date fechaLimite) {
+    public Tarea(String descripcion, Date fechaLimite, PlanApoyo planApoyo) {
         this.descripcion = descripcion;
         this.fechaLimite = fechaLimite;
         this.planApoyo = planApoyo;
