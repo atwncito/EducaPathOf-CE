@@ -12,7 +12,7 @@ import java.util.List;
 public class PlanApoyo {
 
     // ATRIBUTOS PRIVADOS
-    private String idPlanApoyo;                    // Identificador único del plan de apoyo
+    private String idPlanApoyo;           // Identificador único del plan de apoyo
     private Estudiante estudiante;        // Objeto de la clase Estudiante
     private List<String> objetivos;       // Lista de objetivos definidos en el plan
     private List<String> actividades;     // Actividades propuestas en el plan
@@ -45,8 +45,8 @@ public class PlanApoyo {
     }
 
     // Agrega una tarea al cronograma con su fecha límite.
-    public void agregarTarea(String descripcion, Date fechaLimite) {
-        cronograma.add(new Tarea(descripcion, fechaLimite));
+    public void agregarTarea(String descripcion, Date fechaLimite, PlanApoyo planApoyo) {
+        cronograma.add(new Tarea(descripcion, fechaLimite, planApoyo));
     }
 
     // METODOS GET Y SET
